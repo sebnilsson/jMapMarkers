@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jMapMarkers Demo</title>
+  </head>
+  <body>
+    <div id="map1" class="map" style="height: 300px; width: 300px; float: left; margin-right: 1em;"></div>
+    <div id="map2" class="map" style="height: 400px; width: 500px; float: left; margin-right: 1em;"></div>
+    <button id="add-button">Add markers</button>
+
+    <!-- page content -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="jMapMarkers.jQuery.js"></script>
+
+    <script>
+        $(function () {
+            $('#map1').jMapMarkers({
+                mapOptions: {
+                    zoom: 1,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false
+                },
+                markers: [
+                    { lat: '59.329444', long: '18.068611', title: 'Stockholm', desc: 'Capital of Sweden' },
+                    { lat: '59.949444', long: '10.756389', title: 'Oslo', desc: 'Capital of Norway' }
+                ]
+            });
+
+            $('#map2').jMapMarkers({
+                mapOptions: {
+                    zoom: 3,
+                    center: new google.maps.LatLng(59.33279, 18.06449),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false
+                },
+                markers: [
+                    { lat: 52.500556, long: 13.398889, title: 'Berlin', desc: 'Capital of Germany' },
+                    { lat: 48.8567, long: 2.3508, title: 'Paris', desc: 'Capital of France' },
+                    { lat: 51.507222, long: -0.1275, title: 'London', desc: 'Capital of England' }
+                ]
+            });
+
+            $('#add-button').click(function () {
+                $('.map').jMapMarkers({
+                    markers: [
+                        { lat: 55.676111, long: 12.568333, title: 'Copenhagen', desc: 'Capital of Denmark' },
+                        { lat: 46.95, long: 7.45, title: 'Bern', desc: 'Capital of Switzerland' },
+                    ]
+                });
+            });
+        });
+    </script>
+  </body>
+</html>
