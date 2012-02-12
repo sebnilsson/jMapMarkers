@@ -1,3 +1,7 @@
 A jQuery-plugin to easily add a Google Maps-map with markers and info-windows.
 
+Based on Google Maps Javascript API V3.
+
 See demo.html for examples of use.
+
+Please feel free to fork and/or provide feedback.
